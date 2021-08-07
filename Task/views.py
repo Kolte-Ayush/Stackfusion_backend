@@ -24,8 +24,7 @@ class UserCreation(APIView):
             emsg = EmailMessage()
             emsg.to = [request.data['email']]
             emsg.subject = "Registration"
-            mailrespone = EmailService.send(emsg)
-            if mailrespone == 1:
-                serialize_form.save()
-                return Response(serialize_form.data, status=status.HTTP_201_CREATED)
+            serialize_form.save()
+            EmailService.send(emsg)
+            return Response(serialize_form.data, status=status.HTTP_201_CREATED)
         return Response(serialize_form.errors, status=status.HTTP_400_BAD_REQUEST)

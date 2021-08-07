@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'corsheaders'
 ]
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:4200","https://assingment-sf-frontend.herokuapp.com"
+    "http://localhost:4200", "https://assingment-sf-frontend.herokuapp.com"
 ]
 # Email Setup
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
